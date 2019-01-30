@@ -6,4 +6,11 @@ test:
 
 update:
 	git submodule update --init --recursive
+
+updatefaust:
+	git -C faust checkout master-dev
+	git -C faust pull
 	
+updatefaustservice:
+	git -C faustservice checkout server
+	git -C faustservice pull
