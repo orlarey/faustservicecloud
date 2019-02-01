@@ -14,7 +14,7 @@ FROM grame/faustready-ubuntu-1604:004
 # Now we can clone and compile all the Faust related git repositories
 ########################################################################
 
-RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 002"
+RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 003"
 
 COPY faustservice /faustservice
 RUN  make -C faustservice
@@ -42,7 +42,7 @@ WORKDIR /faustservice
 RUN cp ./bin/dockerOSX /usr/local/bin/; \ 
     rm -rf makefiles/osx; \
     mv makefiles/dockerosx makefiles/osx; \
-    rm -rf makefiles/windows64 makefiles/ros makefiles/unity/all makefiles/unity/osx
+    rm -rf makefiles/ros makefiles/unity/all makefiles/unity/osx
 
 CMD ./faustweb --port 80 --sessions-dir /tmp/sessions
 
