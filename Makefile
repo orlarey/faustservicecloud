@@ -16,3 +16,8 @@ updatefaust:
 updatefaustservice:
 	git -C faustservice checkout server
 	git -C faustservice pull
+
+help:
+	@echo " 'update' : update faust and faustservice to the latest versions"
+	@echo " 'build'  : builds the docker image"
+	@echo " 'test'   : run the docker image"
