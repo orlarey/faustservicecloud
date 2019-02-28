@@ -14,7 +14,9 @@ FROM grame/faustready-ubuntu-1604:004
 # Now we can clone and compile all the Faust related git repositories
 ########################################################################
 
-RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 003"
+RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 004"
+
+ADD gradle-4.6-bin.zip /opt/gradle
 
 COPY faustservice /faustservice
 RUN  make -C faustservice
