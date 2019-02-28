@@ -1,8 +1,5 @@
-build: gradle-4.6-bin.zip
+build: 
 	docker build -t grame/faustservicecloud:latest .
-
-gradle-4.6-bin.zip :
-	wget https://services.gradle.org/distributions/gradle-4.6-bin.zip
 
 test:
 	docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:latest
