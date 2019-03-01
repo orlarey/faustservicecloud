@@ -46,7 +46,7 @@ WORKDIR /faustservice
 RUN cp ./bin/dockerOSX /usr/local/bin/; \ 
     rm -rf makefiles/osx; \
     mv makefiles/dockerosx makefiles/osx; \
-    rm -rf makefiles/ros makefiles/unity/all makefiles/unity/osx
+    rm -rf makefiles/ros makefiles/unity/all makefiles/unity/android makefiles/unity/ios makefiles/unity/osx
 
 CMD ./faustweb --port 80 --sessions-dir /tmp/sessions
 
