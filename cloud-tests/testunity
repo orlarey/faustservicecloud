@@ -5,7 +5,7 @@
 
 PLATFORM=unity
 #ARCHLIST="android ios linux osx source windows32 windows64"
-ARCHLIST="linux windows32 windows64"
+ARCHLIST="source linux windows32 windows64"
 
 echo "$PLATFORM"
 for ARCH in $ARCHLIST; do
