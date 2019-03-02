@@ -14,9 +14,9 @@ FROM grame/faustready-ubuntu-1604:004
 # Now we can clone and compile all the Faust related git repositories
 ########################################################################
 
-RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 004"
+RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 005"
 
-RUN wget https://services.gradle.org/distributions/gradle-4.6-bin.zip \
+RUN wget -q https://services.gradle.org/distributions/gradle-4.6-bin.zip \
     && unzip gradle-4.6-bin.zip -d /opt/gradle \
     && rm gradle-4.6-bin.zip
 
@@ -46,7 +46,7 @@ WORKDIR /faustservice
 RUN cp ./bin/dockerOSX /usr/local/bin/; \ 
     rm -rf makefiles/osx; \
     mv makefiles/dockerosx makefiles/osx; \
-    rm -rf makefiles/ros makefiles/unity/all makefiles/unity/android makefiles/unity/ios makefiles/unity/osx
+    rm -rf makefiles/ros makefiles/unity/Makefile.all makefiles/unity/Makefile.android makefiles/unity/Makefile.ios makefiles/unity/Makefile.osx
 
 CMD ./faustweb --port 80 --sessions-dir /tmp/sessions
 
