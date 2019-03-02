@@ -48,7 +48,7 @@ RUN cp ./bin/dockerOSX /usr/local/bin/; \
     mv makefiles/dockerosx makefiles/osx; \
     rm -rf makefiles/ros makefiles/unity/Makefile.all makefiles/unity/Makefile.android makefiles/unity/Makefile.ios makefiles/unity/Makefile.osx
 
-CMD ./faustweb --port 80 --sessions-dir /tmp/sessions
+CMD ./faustweb --port 80 --sessions-dir /tmp/sessions --recover-cmd /faustservice/faustweb
 
 
 
