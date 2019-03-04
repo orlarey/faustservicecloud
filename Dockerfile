@@ -14,7 +14,7 @@ FROM grame/faustready-ubuntu-1604:004
 # Now we can clone and compile all the Faust related git repositories
 ########################################################################
 
-RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 006"
+RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 007"
 
 RUN wget -q https://services.gradle.org/distributions/gradle-4.6-bin.zip \
     && unzip gradle-4.6-bin.zip -d /opt/gradle \
