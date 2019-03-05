@@ -57,12 +57,8 @@ CMD ./faustweb --port 80 --sessions-dir /tmp/sessions --recover-cmd /faustservic
 ########################################################################
 # For local tests:
 #-----------------
-# docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sharedfaustfolder:/tmp/sharedfaustfolder -p 80:80 grame/faustservice:latest
+# docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:latest
 #
 # For production:
-#----------------
-# docker run -d --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sharedfaustfolder:/tmp/sharedfaustfolder -p 80:80 grame/faustservice:latest
-#
-# Old production:
-#----------------
-# docker run -d --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sharedfaustfolder:/tmp/sharedfaustfolder -p 80:80 grame/faustservice-ubuntu-1604-neuf-tuned:latest
+#-----------------
+# docker run -d --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:latest
