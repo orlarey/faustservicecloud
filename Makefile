@@ -1,6 +1,9 @@
 build: 
 	docker build -t grame/faustservicecloud:experimental .
 
+run:
+	docker run -d --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:experimental
+
 test:
 	docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:experimental
 
@@ -23,5 +26,6 @@ updatefaustservice:
 help:
 	@echo " 'update' : update faust and faustservice to the latest versions"
 	@echo " 'build'  : builds the docker image"
-	@echo " 'test'   : run the docker image"
-	@echo " 'debug'  : run the docker image in bash mode"
+	@echo " 'run'    : run the docker image in production mode"
+	@echo " 'test'   : run the docker image in test mode"
+	@echo " 'debug'  : log into the docker image in bash mode"
