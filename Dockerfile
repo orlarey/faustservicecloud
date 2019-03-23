@@ -41,6 +41,7 @@ RUN echo "process=+;" > tmp.dsp; \
 ########################################################################
 # And starts Faustservice
 ########################################################################
+ENV PORT=80
 EXPOSE $PORT
 WORKDIR /faustservice
 RUN cp ./bin/dockerOSX /usr/local/bin/; \ 

@@ -1,11 +1,11 @@
 build: 
-	docker build -t grame/faustservicecloud:latest .
+	docker build -t grame/faustservicecloud:experimental .
 
 test:
-	docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:latest
+	docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:experimental
 
 debug:
-	docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:latest /bin/bash
+	docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/sessions:/tmp/sessions -p 80:80 grame/faustservicecloud:experimental /bin/bash
 
 update: initsubmodules updatefaust updatefaustservice
 
@@ -17,7 +17,7 @@ updatefaust:
 	git -C faust pull
 	
 updatefaustservice:
-	git -C faustservice checkout server
+	git -C faustservice checkout withExperimentalStopUrl
 	git -C faustservice pull
 
 help:
