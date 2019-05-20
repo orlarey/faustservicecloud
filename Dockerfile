@@ -16,9 +16,9 @@ FROM grame/faustready-ubuntu-1604:004
 
 RUN echo "CHANGE THIS NUMBER TO FORCE REGENERATION : 008"
 
-RUN wget -q https://services.gradle.org/distributions/gradle-4.6-bin.zip \
-    && unzip gradle-4.6-bin.zip -d /opt/gradle \
-    && rm gradle-4.6-bin.zip
+RUN wget -q https://services.gradle.org/distributions/gradle-4.10.1-bin.zip \
+    && unzip gradle-4.10.1-bin.zip -d /opt/gradle \
+    && rm gradle-4.10.1-bin.zip
 
 COPY faustservice /faustservice
 RUN  make -C faustservice
