@@ -35,7 +35,7 @@ RUN  make -C faustservice
 
 COPY faust /faust
 RUN  make -C /faust; \
-     make -C /faust install
+    make -C /faust install
 
 ########################################################################
 # Tune image by forcing Gradle upgrade
@@ -66,8 +66,9 @@ COPY   	faust-crossosx/sdks 	/osxcross/sdks
 COPY   	faust-crossosx/scripts	/osxcross/scripts
 COPY   	faust-crossosx/tests 	/osxcross/tests
 RUN		ln -s Qt5.9.1 Qt && \
-		sh scripts/install.sh && \
-		ln -s /usr/include/boost compiler/target/SDK/MacOSX10.11.sdk/usr/include/
+    sh scripts/install.sh && \
+    ln -s /usr/include/boost compiler/target/SDK/MacOSX10.11.sdk/usr/include/
+
 
 
 ########################################################################
@@ -77,7 +78,7 @@ EXPOSE 80
 WORKDIR /faustservice
 RUN cp ./bin/dockerOSX /usr/local/bin/; \ 
     rm -rf makefiles/osx; \
-    mv makefiles/dockerosx makefiles/osx; \
+    mv makefiles/crossosx makefiles/osx; \
     rm -rf makefiles/ros makefiles/unity/Makefile.all makefiles/unity/Makefile.android makefiles/unity/Makefile.ios makefiles/unity/Makefile.osx
 
 CMD ./faustweb --port 80 --sessions-dir /tmp/sessions --recover-cmd /faustservice/faustweb
