@@ -70,7 +70,6 @@ RUN		ln -s Qt5.9.1 Qt && \
     ln -s /usr/include/boost compiler/target/SDK/MacOSX10.11.sdk/usr/include/
 
 
-
 ########################################################################
 # And starts Faustservice
 ########################################################################
